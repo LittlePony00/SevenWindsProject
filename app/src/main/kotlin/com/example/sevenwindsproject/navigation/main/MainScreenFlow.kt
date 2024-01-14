@@ -66,7 +66,10 @@ fun NavGraphBuilder.mainScreenFlow(
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) {
-            MenuScreen(viewModel = koinViewModel<MenuScreenViewModel>())
+            MenuScreen(
+                viewModel = koinViewModel<MenuScreenViewModel>(),
+                navHostController = navController
+            )
             screenName("Меню")
             routeToPreviousScreen(MainScreen.NearestScreen.route)
             isIconButtonActive(true)
@@ -80,7 +83,7 @@ fun NavGraphBuilder.mainScreenFlow(
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) {
-            OrderScreen()
+            OrderScreen(navController)
             screenName("Ваш заказ")
             routeToPreviousScreen(MainScreen.MenuScreen.route)
             isIconButtonActive(true)
