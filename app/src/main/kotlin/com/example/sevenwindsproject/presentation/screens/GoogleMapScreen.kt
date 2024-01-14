@@ -28,7 +28,8 @@ fun GoogleMapScreen(
         position = CameraPosition.fromLatLngZoom(point, 10f)
     }
 
-    val singaporeState = MarkerState(point)
+    val state = MarkerState(point)
+    val state2 = MarkerState(LatLng(point.latitude, 37.6))
 
     GoogleMap(
         modifier = modifier.fillMaxSize(),
@@ -36,14 +37,15 @@ fun GoogleMapScreen(
     ) {
         MapMarker(
             context = LocalContext.current,
-            position = singaporeState.position,
+            position = state.position,
             title = "Your position",
             icon = R.drawable.cafe
         )
-//            Marker(
-//                state = singaporeState,
-//                icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
-//            )
+
+        Marker(
+            state = state2,
+            icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
+        )
     }
 }
 

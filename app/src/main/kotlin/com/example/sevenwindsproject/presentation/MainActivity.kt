@@ -91,7 +91,7 @@ class MainActivity : ComponentActivity() {
                         ) { paddings ->
                             SevenWindsScreenFlow(
                                 paddingValues = paddings,
-                                currentLocation = LatLng(123.0, -10.0),
+                                currentLocation = LatLng(55.75, 37.61),
                                 navHostController = navController,
                                 toolBarName = { toolBarName ->
                                     mutableTopBarState = toolBarName

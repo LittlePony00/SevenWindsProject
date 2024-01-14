@@ -37,7 +37,7 @@ fun OrderScreen(
     val list = List(12) {
         ShopLocationModel(
             id = it,
-            name = "Coffix",
+            name = "Капучино",
             point = Pair(0f, 0f)
         )
     }
